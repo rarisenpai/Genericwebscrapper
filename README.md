@@ -25,7 +25,7 @@ A web scraper with a graphical user interface (GUI) built using [streamlit](http
  - pip install -r requirements.txt
  
 3. Run the script
- - streamlit gui.py
+ - streamlit run gui.py
 
 4. Enter the URL of the page you want to scrape and select the pages and tags you want to target.
 
