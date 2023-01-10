@@ -1,7 +1,7 @@
 # Web Scraper
 
 A web scraper with a graphical user interface (GUI) built using [streamlit](https://www.streamlit.io/).
-
+You can see the app deployed [here](https://rarisenpai-genericwebscrapper-gui-gpxt6f.streamlit.app/)
 ## Features
 
 - Enter a URL to scrape
