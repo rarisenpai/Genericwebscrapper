@@ -1,18 +1,18 @@
+'''The graphical user interface to allow the user to interact with and edit the scraped data on a webpage'''
 import streamlit as st
-from streamlit_ace import st_ace
 import scraper
 
-st.set_page_config(layout="wide") 
+st.set_page_config(layout="wide")
 
 st.title('Web Scraper using streamlit module')
 
 # Present user with a text input area for url input
-url =  str(st.text_input('Enter the website to scrape'))
+URL =  str(st.text_input('Enter the website to scrape'))
 
 # Check for other pages
-if url:
+if URL:
     try:
-        other_pages =  scraper.extract_other_pages(url)
+        other_pages =  scraper.extract_other_pages(URL)
     except Exception as e:
         other_pages = []
 
@@ -33,7 +33,7 @@ if url:
             selected_tags = st.sidebar.multiselect("Select tags", tags)
 
             # Extract the data for the selected tags
-            st.write(f'Showing extracted data for {url}')
+            st.write(f'Showing extracted data for {URL}')
             data = ''
             for tag in  soup.find_all(selected_tags):
                 data += '\n ' + tag.text
@@ -45,4 +45,4 @@ if url:
             if code:
                 st.code(soup)
     else:
-        st.error('The url you entered can\'t be scraped with this tool as its most likely Javascript rendered')
+        st.error('The url is not scrapable with this tool as its most likely Javascript rendered')
